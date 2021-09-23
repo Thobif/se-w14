@@ -1,29 +1,32 @@
 import { Component } from "react";
-
+import "./About.css"
 
 class About extends Component{
     
     state = {name: "Mark", contact: " 039520123", email: "mark@gmail.com"};
-    
+    static defaultProps={
+        name:"Jhon Travota",
+        age: "30",
+        email :"James@gmail.com",
+        about :"this is about page"
+    }
     render(){
-        const name = "Mark";
+        // const name = "Mark";
+        // const  fullName = () => "Mark Sakaberg"
+        // const ShowAge = false;
+        // const  age = 25;
+        // const miss = 0;
+        const myStyle = {color:"red",backgroundColor:"orange"}
+        const {name, age , email , about} = this.props;
+        // console.log(this.props);
 
-        const  fullName = () => "Mark Sakaberg"
-        const ShowAge = false;
-        const  age = 25;
-        const miss = 0;
         return(
-            <div>
-                <h1>About Component</h1>
-                <h2>{this.state.name}</h2>
-                <h2>{this.state.contact}</h2>
-                <h2>{this.state.email}</h2>
-                <h1>{name}</h1>
-                <h2>{fullName()}</h2>
-                {
-                    ShowAge ? age : <h2>{miss}</h2>
-                }
-                <hr/>
+            // <div className="about">
+            <div style={myStyle}>
+              <h1>{name}</h1>
+              <h2>{age}</h2>
+              <h2>{email}</h2>
+              <h2>{about}</h2>
             </div>
         )
     };
